@@ -1,75 +1,40 @@
-# Island Style Wigs — Owner Notes Synthesis
+# Island Style Wigs — Owner Direction & Build Strategy
 
-## Visual & Logo Direction
-- Embrace flowing, elegant silhouettes similar to the provided inspiration images: minimalist line art of a woman in profile with long, stylized hair.
-- Favor clean, high-contrast palettes (black, white, muted metallics) that highlight the fluid hair shapes.
-- Carry the graceful curves into icons, dividers, and section backgrounds so the brand feels cohesive.
+## 1. Creative & Messaging Summary
+- **Visual identity**: Elegant, flowing line-art silhouettes inspired by the provided reference images; rely on high contrast neutrals (black, white, soft metallics) with graceful curves echoed across icons, dividers, and backgrounds.
+- **Brand voice**: Compassionate, faith-affirming, and confidence-restoring—acknowledging vulnerability while celebrating beauty and resilience.
+- **Audience needs**: Women facing autoimmune or medical hair loss who want private, judgment-free guidance, education, and ongoing partnership.
+- **Experience promises**: Personalized consultations, expert coaching on wig selection and color matching, long-term care support (maintenance, adhesives, shipping help), and a nurturing community.
+- **Key messaging cues**: "You are already beautiful; we're here to reveal it," hair transformation as healing, bravery and self-love, gratitude toward clients, selective placement of scripture/affirmations on storytelling pages.
+- **Contact context**: Owner Sheri Blow; phone **605-660-9192**; awaiting confirmation of address/service location before publishing.
 
-## Brand Promise & Voice
-- Island Style Wigs exists to restore confidence and joy for women navigating hair loss.
-- Tone should be empathetic, faith-grounded, and uplifting—celebrating personal journeys and honoring vulnerability.
-- Messaging should reinforce that every guest is seen, heard, and supported with love, compassion, and expertise.
+## 2. Content Blueprint
+| Section | Purpose & Talking Points | Featured Actions |
+| --- | --- | --- |
+| **Homepage** | Hero that mirrors inspiration art; concise brand promise; highlight consultations, education, and curated shop. | Book Consultation · Explore Wig Guides · Shop Curated Looks |
+| **About Sheri** | Share Sheri's autoimmune hair-loss journey, ministry-minded mission, and client gratitude; include selective faith-based quotes. | Meet Sheri · Read Mission |
+| **Expert Help Hub** | Glossary, measuring guide, cap construction explainer, color education; reference trusted partners (Joshua24, Wigs.com, CysterWigs, HeadsUpWigs, HairKitty, ElegantWigs) as inspiration links. | Dive into Guides |
+| **Hair & Wig Guides** | Deep-dive articles on hair loss causes, wig/toppers/extensions overview, care routines, shipping/local pickup, and My Account concept for existing clients. | View Tutorials |
+| **Video Library** | Owner-led how-tos: wig basics, toppers vs wigs, color ring usage, customization, adhesives demos, maintenance, styling, testimonies. | Watch Videos |
+| **Shop Highlights** | Curated collections, toppers, adhesives, care kits, styling tools; include detailed descriptions, photos, color swatches, best sellers, staff picks, faith-affirming notes. | Shop Collection |
+| **Contact** | Private consultation scheduling, phone/email, service regions, FAQs on shipping/returns. | Contact Sheri |
 
-## Target Audience Insights
-- Women experiencing autoimmune, medical, or stress-related hair loss who want to feel beautiful again.
-- Clients seeking private, judgment-free consultations and long-term partnership on their wig journey.
-- Shoppers who value education (glossaries, fitting guides), color accuracy, and curated recommendations.
+## 3. Build Strategy (aligned with earlier plan)
+1. **Foundational Setup**
+   - Create project structure with tooling (framework, linting, formatting) and global style tokens for the elegant aesthetic.
+2. **Design System**
+   - Translate inspiration art into reusable components: logo lockups, typography scale, color palette, curved section dividers, CTA buttons.
+3. **Homepage First**
+   - Implement responsive layout featuring hero imagery, core messaging, CTA trio, preview cards for guides, shop, and videos.
+4. **Content Sections**
+   - Build About, Expert Help Hub, Hair & Wig Guides, Video Library, Shop Highlights, and Contact pages—reuse layout shell and components.
+5. **Reusable Components & Media**
+   - Develop cards, testimonial placeholders, CTA banners, video modules, and navigation. Prepare for future CMS or static data integration.
+6. **Performance & Accessibility**
+   - Optimize images, ensure semantic HTML, provide ARIA labels, and test with Lighthouse/axe. Keep faith-based elements accessible (readable contrast, descriptive alt text).
+7. **Testing & Launch Readiness**
+   - Add unit/E2E coverage for key flows, document outstanding content (testimonials, address), and finalize deployment pipeline.
 
-## Signature Experience Highlights
-- Personalized consultations that listen to each client’s story, identify unique needs, and craft custom solutions.
-- Guidance in selecting natural-looking wigs/toppers with multi-dimensional color, realistic hairlines, and versatile styling.
-- Support beyond the purchase: maintenance tips, adhesives guidance, shipping assistance, and a welcoming community.
-
-## Core Site Sections & Content
-### About Island Style
-- Belief & mission: uplift women through compassionate wig expertise; hair transformation is a ministry.
-- Owner story (Sheri Blow): autoimmune hair loss inspired the business; passion for helping others reclaim confidence.
-- Testimonials & gratitude for clients who allow Island Style Wigs to be part of their journey (placeholders until approved stories are available).
-- Contact information and service area (St. Augustine, FL; Jacksonville, FL noted in owner notes) plus phone **605-660-9192**.
-
-### Expert Help Hub
-- Glossary of wig terminology.
-- Measuring guide (head sizing, cap fit).
-- Cap construction explanations (lace front, mono top, hand-tied, etc.).
-- Color education: undertones, matching natural hair, curated palettes.
-- Wig selection advice sourced from trusted industry partners—use Joshua24.com, Wigs.com, CysterWigs.com, HeadsUpWigs.com, HairKitty.com, ElegantWigs.com as inspiration/reference links.
-
-### Hair & Wig Guides
-- Hair loss education (causes, solutions, encouragement).
-- Breakdown of wig types, toppers, extensions, and accessories.
-- Care routines: washing, storage, styling, adhesives, adhesives removal.
-- Shipping policies, local pickup, and fitting appointments.
-- “My Account” concept for existing clients to access orders, tutorials, and personalized notes.
-
-### Video Library ("How-To Wigs")
-- Topics requested: wig basics 101, toppers vs. wigs, choosing colors, how to find your color, using the color ring chart, comparing colors, customizing and trimming, adhesives demo, applying toppers, wig maintenance, storage, styling, and inspirational testimonies.
-- Include owner-led demonstrations to reinforce expertise and personal touch.
-
-### Shop / Product Highlights
-- Feature curated wig collections, topper recommendations, adhesives, care kits, and styling tools.
-- Provide detailed descriptions, multiple photos, and color swatches to support confident decisions.
-- Highlight best sellers, staff picks, and faith-based encouragement quotes alongside products.
-
-## Key Messaging Themes
-- "You are already beautiful; let us help your reflection match how you feel." (rephrase from notes about perfect beauty already being present.)
-- Hair transformation is part of a healing journey—Island Style Wigs is a trusted companion.
-- Emphasize bravery, self-love, and the freedom of choice in styling.
-- Celebrate community: testimonials, gratitude notes, and stories from real clients.
-
-## Calls-to-Action
-- "Book a Private Consultation" (virtual or in-person).
-- "Explore Wig Guides" for self-education.
-- "Shop Curated Looks" featuring owner-approved picks.
-- "Watch How-To Videos" for maintenance and styling tips.
-
-## Support Services & Logistics
-- Offer shipping guidance, local pickup details, and customer service contact (phone/email from notes once confirmed).
-- Provide resources for adhesives (waterproof, daily wear), measuring, and color matching kits.
-- Clarify return/exchange policies and encourage clients to reach out for personalized help.
-
-## Faith-Based Integration Guidance
-- Weave select scriptures or affirmations into targeted areas (e.g., About page, select blog posts, or testimonial highlights) while keeping core navigation and product pages focused on service clarity.
-
-## Open Questions / Clarifications Needed
-1. Please confirm the precise address or service location details you’d like published alongside the confirmed phone number.
+## 4. Outstanding Clarification
+- Confirm the exact address or service locations to list alongside the published phone number.
 
