@@ -41,6 +41,7 @@ IslandStyle/
 ├── guides.html                 # Deep-dive resource roadmap and actionable how-to content
 ├── videos.html                 # Upcoming video programming overview with encouragement features
 ├── shop.html                   # Curated product categories and future e-commerce roadmap
+├── CRM Certifications - Administrator Overview.html # Reference microsite outlining the admin certification journey
 ├── contact.html                # Consultation request form, direct contact details, and FAQs
 ├── README.md                   # You are here
 └── reference/                  # Owner direction, inspiration, and CRM certification resources
@@ -78,7 +79,7 @@ locally—no external services or credentials required.
   and composite downloads directly in the browser.
 - `assets/js/try-on-data.js` stores sample favorites, including SVG overlays and a sample portrait. Swap these entries with transparent
   PNGs from your catalog to customize the experience.
-- `docs/ai-try-on/` describes both the demo capabilities and the forward-looking production plan.
+- `docs/ai-try-on/` describes both the demo capabilities and the forward-looking production plan, including cross-team touchpoints with CRM enablement resources.
 - `server/` and `ai-service/` remain as future-facing scaffolds. Keep them around if you plan to connect the UI to a cloud-based
   blending pipeline later on.
 - `scripts/demo-server.mjs` spins up a zero-dependency static server at [http://127.0.0.1:4173/try-on.html](http://127.0.0.1:4173/try-on.html)

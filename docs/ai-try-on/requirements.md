@@ -63,3 +63,9 @@ The sections below separate the requirements for each track.
 - Should we support multiple portrait uploads per user?
 - What analytics events are required for marketing attribution?
 - Are there legal requirements for AI usage disclosures on the try-on page?
+- How will CRM certification resources surface within the try-on journey for stylists or admins?
+
+## Cross-team coordination
+- Partner with the CRM enablement team to ensure try-on events map to the certification tracking taxonomy.
+- Document data contracts between the try-on queue and any CRM pipelines that trigger follow-up sequences.
+- Provide demo assets to the CRM training microsite so stylists can practice explaining the feature to clients.
