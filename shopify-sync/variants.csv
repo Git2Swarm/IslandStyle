@@ -1,0 +1,6 @@
+handle,option1_name,option1_value,sku,barcode,price,compare_at_price,weight,weight_unit,inventory_quantity,inventory_policy,taxable,requires_shipping,image_src,color_hex
+envy-marsha-1172,Color,Almond Breeze,ENVY-MARSHA-ALMBRZ-1172,,229.00,279.00,120,g,10,deny,TRUE,TRUE,https://example.com/images/wigs/marsha/almond-breeze.jpg,#B69C84
+envy-tara-1173,Color,Chocolate Caramel,ENVY-TARA-CHOCAR-1173,,199.00,249.00,105,g,12,deny,TRUE,TRUE,https://example.com/images/wigs/tara/chocolate-caramel.jpg,#6B4A3D
+envy-lily-1174,Color,Golden Sand,ENVY-LILY-GOLDS-1174,,239.00,289.00,125,g,8,deny,TRUE,TRUE,https://example.com/images/wigs/lily/golden-sand.jpg,#C9A46A
+envy-ava-1175,Color,Dark Chocolate,ENVY-AVA-DKCHOC-1175,,259.00,309.00,135,g,6,deny,TRUE,TRUE,https://example.com/images/wigs/ava/dark-chocolate.jpg,#4A2E25
+envy-zoe-1176,Color,Mocha Frost,ENVY-ZOE-MOCHF-1176,,219.00,269.00,110,g,9,deny,TRUE,TRUE,https://example.com/images/wigs/zoe/mocha-frost.jpg,#7B6356

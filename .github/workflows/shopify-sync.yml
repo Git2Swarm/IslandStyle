@@ -1,0 +1,33 @@
+name: Shopify CSV Sync
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'shopify-sync/*.csv'
+      - 'shopify-sync/sync.js'
+      - 'shopify-sync/package.json'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: shopify-sync
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci || npm i
+      - run: node -e "require('fs').writeFileSync('.env',`SHOPIFY_STORE=${process.env.SHOPIFY_STORE}
+SHOPIFY_ADMIN_TOKEN=${process.env.SHOPIFY_ADMIN_TOKEN}
+STOREFRONT_DOMAIN=${process.env.STOREFRONT_DOMAIN}
+INVENTORY_LOCATION_NAME=${process.env.INVENTORY_LOCATION_NAME}
+`)"
+        env:
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
+          SHOPIFY_ADMIN_TOKEN: ${{ secrets.SHOPIFY_ADMIN_TOKEN }}
+          STOREFRONT_DOMAIN: ${{ secrets.STOREFRONT_DOMAIN }}
+          INVENTORY_LOCATION_NAME: ${{ secrets.INVENTORY_LOCATION_NAME }}
+      - run: npm run sync
