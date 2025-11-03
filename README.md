@@ -51,7 +51,6 @@ IslandStyle/
 Reference materials remain available for future iterations:
 
 - [Owner Direction & Build Strategy](reference/owner-notes-summary.md)
-- CRM certification reference: [`CRM Certifications - Administrator Overview.html`](CRM%20Certifications%20-%20Administrator%20Overview.html)
 
 > Note: The design inspiration images mentioned in the original brief should live in `reference/images/`. Upload or refresh them as new creative assets arrive.
 
