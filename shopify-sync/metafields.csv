@@ -1,0 +1,26 @@
+handle,namespace,key,type,value
+envy-marsha-1172,custom,fiber,single_line_text_field,Synthetic
+envy-marsha-1172,custom,construction,single_line_text_field,Lace Front
+envy-marsha-1172,custom,cap_size,single_line_text_field,Average
+envy-marsha-1172,custom,texture,single_line_text_field,Straight
+envy-marsha-1172,custom,length_overall,number_decimal,12.0
+envy-tara-1173,custom,fiber,single_line_text_field,Synthetic
+envy-tara-1173,custom,construction,single_line_text_field,Mono Top
+envy-tara-1173,custom,cap_size,single_line_text_field,Average
+envy-tara-1173,custom,texture,single_line_text_field,Straight
+envy-tara-1173,custom,length_overall,number_decimal,8.0
+envy-lily-1174,custom,fiber,single_line_text_field,Synthetic
+envy-lily-1174,custom,construction,single_line_text_field,Lace Front
+envy-lily-1174,custom,cap_size,single_line_text_field,Average
+envy-lily-1174,custom,texture,single_line_text_field,Wavy
+envy-lily-1174,custom,length_overall,number_decimal,14.0
+envy-ava-1175,custom,fiber,single_line_text_field,Synthetic
+envy-ava-1175,custom,construction,single_line_text_field,Lace Front
+envy-ava-1175,custom,cap_size,single_line_text_field,Average
+envy-ava-1175,custom,texture,single_line_text_field,Straight
+envy-ava-1175,custom,length_overall,number_decimal,18.0
+envy-zoe-1176,custom,fiber,single_line_text_field,Synthetic
+envy-zoe-1176,custom,construction,single_line_text_field,Mono Top
+envy-zoe-1176,custom,cap_size,single_line_text_field,Average
+envy-zoe-1176,custom,texture,single_line_text_field,Wavy
+envy-zoe-1176,custom,length_overall,number_decimal,10.0
