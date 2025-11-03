@@ -14,8 +14,13 @@ The site is built with static HTML, CSS, and a small amount of JavaScript. Any s
    cd IslandStyle
    python3 -m http.server 4173
    ```
-3. **Open the site:** visit [http://localhost:4173/index.html](http://localhost:4173/index.html) in your browser.
-4. **Stop the server:** press `Ctrl+C` in the terminal when you are finished.
+   or run the bundled Node server:
+   ```bash
+   node scripts/demo-server.mjs
+   ```
+3. **Open the site:** visit [http://127.0.0.1:4173/index.html](http://127.0.0.1:4173/index.html) in your browser.
+4. **Explore the try-on demo:** navigate directly to [http://127.0.0.1:4173/try-on.html](http://127.0.0.1:4173/try-on.html) to upload or sample a portrait.
+5. **Stop the server:** press `Ctrl+C` in the terminal when you are finished.
 
 > If you prefer Node-based tooling, `npx serve` from the project root will provide an equivalent static server.
 
@@ -27,7 +32,9 @@ IslandStyle/
 │   ├── css/
 │   │   └── styles.css          # Global typography, color palette, layouts, and responsive rules
 │   └── js/
-│       └── main.js            # Mobile navigation toggle and footer year helper
+│       ├── main.js            # Mobile navigation toggle and footer year helper
+│       ├── try-on-data.js     # Demo favorites, overlays, and sample portrait definitions
+│       └── try-on.js          # In-browser try-on controller for uploads and overlays
 ├── index.html                  # Homepage with hero, promise highlights, testimonials, and consultation CTA
 ├── about.html                  # Sheri's story, values, and community gratitude messaging
 ├── expert-help.html            # Glossaries, measurement support, and trusted partner references
@@ -61,3 +68,20 @@ Reference materials remain available for future iterations:
 - Prepare downloadable worksheets for the Expert Help Hub as they are finalized.
 
 Keep this README updated as new guidance or assets arrive so the project team always knows where to find the latest references.
+
+## AI Try-On Experience
+
+The repository now ships with an in-browser try-on demo that uses layered artwork to mimic the eventual AI workflow. Everything runs
+locally—no external services or credentials required.
+
+- `try-on.html` loads `assets/js/try-on-data.js` and `assets/js/try-on.js` to handle portrait uploads, wig selection, sizing controls,
+  and composite downloads directly in the browser.
+- `assets/js/try-on-data.js` stores sample favorites, including SVG overlays and a sample portrait. Swap these entries with transparent
+  PNGs from your catalog to customize the experience.
+- `docs/ai-try-on/` describes both the demo capabilities and the forward-looking production plan.
+- `server/` and `ai-service/` remain as future-facing scaffolds. Keep them around if you plan to connect the UI to a cloud-based
+  blending pipeline later on.
+- `scripts/demo-server.mjs` spins up a zero-dependency static server at [http://127.0.0.1:4173/try-on.html](http://127.0.0.1:4173/try-on.html)
+  so reviewers can exercise the demo without additional tooling.
+
+Launch the static server described above and head to `/try-on.html` for a working preview.

@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Favorite {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  color       String?
+  thumbUrl    String?
+  assetUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tryOnJobs   TryOnJob[]
+}
+
+model TryOnJob {
+  id            String   @id @default(cuid())
+  userId        String
+  favoriteId    String
+  portraitId    String
+  status        JobStatus @default(QUEUED)
+  statusMessage String?
+  outputUrl     String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  favorite Favorite @relation(fields: [favoriteId], references: [id])
+}
+
+enum JobStatus {
+  QUEUED
+  PROCESSING
+  COMPLETED
+  FAILED
+}

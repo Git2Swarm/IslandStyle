@@ -1,0 +1,133 @@
+(function () {
+  function encodeSvg(svg) {
+    return `data:image/svg+xml;utf8,${encodeURIComponent(svg.replace(/\s+/g, ' ').trim())}`;
+  }
+
+  const samplePortraitSvg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+      <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#f6f0ea" />
+          <stop offset="100%" stop-color="#efe3d9" />
+        </linearGradient>
+        <linearGradient id="shirtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#6f7fb6" />
+          <stop offset="100%" stop-color="#44527e" />
+        </linearGradient>
+      </defs>
+      <rect width="900" height="1200" fill="url(#bgGradient)" rx="60" />
+      <path d="M300 900c40-120 140-140 150-140h0c20 0 110 20 150 140l60 220H240Z" fill="url(#shirtGradient)" />
+      <path d="M285 452c-6-120 90-222 165-232s154 32 180 132c10 38 6 76-14 116-16 32-24 80-26 134-2 80-28 132-122 156-94-24-120-76-122-156-2-54-10-102-26-134-20-40-24-78-12-116Z" fill="#3e2b24" />
+      <circle cx="450" cy="456" r="176" fill="#f6c8a8" />
+      <ellipse cx="394" cy="440" rx="24" ry="28" fill="#2f221a" />
+      <ellipse cx="506" cy="440" rx="24" ry="28" fill="#2f221a" />
+      <path d="M366 520c26 20 58 28 84 28s58-8 84-28" fill="none" stroke="#2f221a" stroke-width="12" stroke-linecap="round" />
+      <path d="M342 608c18 32 58 54 108 54s90-22 108-54" fill="none" stroke="#2f221a" stroke-width="12" stroke-linecap="round" />
+    </svg>
+  `;
+
+  const overlays = [
+    {
+      id: 'sunset-waves',
+      name: 'Sunset Waves',
+      color: 'Warm Auburn Ombre',
+      description: 'Loose cascading waves with auburn-to-copper gradient highlights.',
+      widthPercent: 78,
+      defaultScale: 100,
+      defaultOffsetX: 0,
+      defaultOffsetY: -6,
+      overlaySvg: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+          <defs>
+            <radialGradient id="sunsetLight" cx="48%" cy="20%" r="70%">
+              <stop offset="0%" stop-color="#f5cda6" stop-opacity="0.9" />
+              <stop offset="35%" stop-color="#c45a28" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#5d2516" stop-opacity="0.9" />
+            </radialGradient>
+            <filter id="sunsetGlow" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+              <feBlend in="SourceGraphic" in2="blur" mode="normal" />
+            </filter>
+          </defs>
+          <path d="M140 476c-6-198 150-336 310-336 160 0 316 138 310 336-6 198-124 340-310 352-186-12-304-154-310-352Z" fill="url(#sunsetLight)" filter="url(#sunsetGlow)" />
+          <path d="M226 506c0 160 86 248 224 248s224-88 224-248c0-64-14-126-42-184-28-56-84-108-182-104-98 4-152 56-182 112-30 58-42 118-42 176Z" fill="#341a15" fill-opacity="0.35" />
+        </svg>
+      `,
+    },
+    {
+      id: 'midnight-bob',
+      name: 'Midnight Bob',
+      color: 'Cool Espresso',
+      description: 'Polished chin-length bob with subtle shine and smooth layers.',
+      widthPercent: 72,
+      defaultScale: 95,
+      defaultOffsetX: 0,
+      defaultOffsetY: -2,
+      overlaySvg: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+          <defs>
+            <radialGradient id="midnightSheen" cx="50%" cy="10%" r="75%">
+              <stop offset="0%" stop-color="#d1d5db" stop-opacity="0.7" />
+              <stop offset="45%" stop-color="#3d2f3c" stop-opacity="0.85" />
+              <stop offset="100%" stop-color="#1b111b" stop-opacity="0.95" />
+            </radialGradient>
+            <filter id="midnightSoft" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="6" />
+            </filter>
+          </defs>
+          <path d="M188 500c0-176 116-296 262-296s262 120 262 296c0 118-56 228-168 256-38 10-78 14-116 14s-78-4-116-14c-112-28-168-138-168-256Z" fill="url(#midnightSheen)" filter="url(#midnightSoft)" />
+          <path d="M226 534c10 126 74 200 224 200s214-74 224-200c4-54-12-118-40-164-32-50-80-82-184-82-104 0-152 32-184 82-28 46-44 110-40 164Z" fill="#12090f" fill-opacity="0.4" />
+        </svg>
+      `,
+    },
+    {
+      id: 'island-curls',
+      name: 'Island Curls',
+      color: 'Soft Chestnut',
+      description: 'Voluminous corkscrew curls with sunkissed chestnut dimension.',
+      widthPercent: 86,
+      defaultScale: 110,
+      defaultOffsetX: 0,
+      defaultOffsetY: -10,
+      overlaySvg: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+          <defs>
+            <radialGradient id="curlsDepth" cx="52%" cy="18%" r="80%">
+              <stop offset="0%" stop-color="#f6d9b0" stop-opacity="0.85" />
+              <stop offset="38%" stop-color="#a86434" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#4a2412" stop-opacity="0.95" />
+            </radialGradient>
+            <filter id="curlTexture" x="-12%" y="-12%" width="124%" height="124%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" result="desat" />
+              <feBlend in="SourceGraphic" in2="desat" mode="multiply" />
+            </filter>
+          </defs>
+          <path d="M120 492c-10-206 160-360 330-360s340 154 330 360c-10 206-140 340-330 360-190-20-320-154-330-360Z" fill="url(#curlsDepth)" filter="url(#curlTexture)" />
+          <path d="M206 544c0 154 88 246 244 246s244-92 244-246c0-74-18-144-54-204-34-58-104-118-190-116-86 2-156 62-190 120-36 58-54 128-54 200Z" fill="#2a1209" fill-opacity="0.35" />
+        </svg>
+      `,
+    },
+  ];
+
+  window.TRY_ON_WIGS = overlays.map((overlay) => ({
+    id: overlay.id,
+    name: overlay.name,
+    color: overlay.color,
+    description: overlay.description,
+    widthPercent: overlay.widthPercent,
+    defaultScale: overlay.defaultScale,
+    defaultOffsetX: overlay.defaultOffsetX,
+    defaultOffsetY: overlay.defaultOffsetY,
+    overlay: encodeSvg(overlay.overlaySvg),
+    thumb: encodeSvg(`
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+        <rect width="220" height="220" rx="28" fill="#f4ede5" />
+        <circle cx="110" cy="94" r="56" fill="#f6c8a8" />
+        <path d="M46 110c-2-68 50-116 110-116s112 48 110 116c-2 68-48 112-110 118-62-6-108-50-110-118Z" fill="${overlay.color.replace(/\s+/g, '%20')}" fill-opacity="0.75" />
+      </svg>
+    `),
+  }));
+
+  window.TRY_ON_SAMPLE_PORTRAIT = encodeSvg(samplePortraitSvg);
+})();
