@@ -6,11 +6,18 @@ IslandStyle is the home of our premium wig shopping experience. This repository 
 2. The browser-based AI try-on experience that lets shoppers visualize wigs on their own photo in seconds.
 3. A Shopify CSV + GraphQL pipeline that keeps the product catalog, variants, and metafields in sync with production.
 
+The `codex/create-ai-try-on-page-for-wigs` spike is being split into **two reviewable pull requests**:
+
+- **Docs + demo extraction (this workstream):** ships documentation, clickable prototypes, and sandbox demos only. No production code paths change, so it can merge safely once reviewers sign off.
+- **Gated UI release:** follows later with the production try-on shell behind a kill switch and environment flag. That branch will only touch the front-end package paths called out in `branch-summary.md`.
+
+Always rebase on the latest `main` before opening either PR (`git fetch && git checkout main && git pull --ff-only`) and use path-scoped cherry-picks/restores to keep diffs limited to the directories called out below.
+
 ---
 
-## 1. Website design & experience strategy
+## 1. Website design & experience blueprint
 
-The marketing site is being built as a modular, content-driven experience that highlights what makes IslandStyle unique and gets visitors into the try-on flow fast.
+The marketing site is being built as a modular, content-driven experience that highlights what makes IslandStyle unique and moves visitors into the try-on flow quickly.
 
 ### Core page structure
 
@@ -33,9 +40,9 @@ These modules map directly to the product data exposed via the Shopify sync so C
 
 ---
 
-## 2. AI try-on experience
+## 2. AI try-on docs, demo workflow & release guardrails
 
-The AI try-on MVP lives in `docs/ai-try-on/requirements.md` and focuses on taking a shopper from favorites to a rendered preview that feels natural and fast.
+The MVP user journey is documented in [`docs/ai-try-on/requirements.md`](docs/ai-try-on/requirements.md). The doc + demo PR should keep work restricted to the `docs/` folder, UX prototypes, and any Storybook/sandbox environments. Production UI bundles stay untouched.
 
 ### Journey overview
 
@@ -46,14 +53,18 @@ The AI try-on MVP lives in `docs/ai-try-on/requirements.md` and focuses on takin
 5. The preview screen supports zoom, rotate, color toggles, and quick swapping across the favorites carousel.
 6. CTA cluster lets shoppers add to bag, save looks, share, and submit feedback for realism scoring.
 
-### Experience guardrails
+### Sandbox/demo expectations
 
-- Upload limits: JPG/PNG up to 15 MB, hairline + shoulders visible.
-- Progress updates no more than 5 seconds apart to keep trust.
-- Analytics events instrumented for every milestone (favorites entry, upload, rendering, CTA actions, feedback).
-- Responsive layouts down to 320px; zoom and carousel interactions tuned for touch.
+- Host prototypes behind a temporary URL or Storybook instance with dummy data — no production API keys.
+- Instrument qualitative feedback capture (session recordings or inline surveys) to validate realism before the gated UI ships.
+- Document known limitations directly in the README so reviewers understand demo boundaries.
 
-KPIs: ≥35% favorites-to-try-on conversion, ≥80% completion rate, ≥15% add-to-bag, P95 latency ≤20s, ≥25% feedback response. Stakeholders review these bi-weekly to guide iteration.
+### Release guardrails for the gated UI follow-up
+
+- Wrap the production try-on entry point with a feature flag + emergency kill switch.
+- Ship environment variables for flag defaults and document how to toggle in staging vs. production.
+- Limit the follow-up PR to front-end package directories listed in `branch-summary.md`; rely on `git restore --source` or targeted cherry-picks to avoid polluting docs-only diffs.
+- Maintain the KPI targets from the requirements doc: ≥35% favorites-to-try-on conversion, ≥80% completion rate, ≥15% add-to-bag, P95 latency ≤20s, ≥25% feedback response.
 
 ---
 
@@ -117,7 +128,7 @@ After the run, confirm in Shopify Admin that variants, pricing, imagery, and met
 
 - ✅ Catalog pipeline MVP with CSV import + Section Rendering refresh.
 - 🚧 Marketing site shell & content model (see `codex/build-full-website-and-update-readme`).
-- 🚧 AI try-on MVP (see `codex/create-ai-try-on-page-for-wigs`).
+- 🚧 AI try-on doc + demo extraction (current work) followed by gated UI with kill switch.
 - 📝 Upcoming: top-level `ROADMAP.md`, `.env.example` for Shopify creds, production try-on deployment notes.
 
 Stay aligned by updating `branch-summary.md` when milestones land and keeping documentation current.
