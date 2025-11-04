@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <radialGradient id="sunsetLight" cx="48%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#f5cda6" stop-opacity="0.9" />
+      <stop offset="35%" stop-color="#c45a28" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#5d2516" stop-opacity="0.9" />
+    </radialGradient>
+    <filter id="sunsetGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feBlend in="SourceGraphic" in2="blur" mode="normal" />
+    </filter>
+  </defs>
+  <path d="M140 476c-6-198 150-336 310-336 160 0 316 138 310 336-6 198-124 340-310 352-186-12-304-154-310-352Z" fill="url(#sunsetLight)" filter="url(#sunsetGlow)" />
+  <path d="M226 506c0 160 86 248 224 248s224-88 224-248c0-64-14-126-42-184-28-56-84-108-182-104-98 4-152 56-182 112-30 58-42 118-42 176Z" fill="#341a15" fill-opacity="0.35" />
+</svg>

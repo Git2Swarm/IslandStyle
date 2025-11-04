@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <radialGradient id="curlsDepth" cx="52%" cy="18%" r="80%">
+      <stop offset="0%" stop-color="#f6d9b0" stop-opacity="0.85" />
+      <stop offset="38%" stop-color="#a86434" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#4a2412" stop-opacity="0.95" />
+    </radialGradient>
+    <filter id="curlTexture" x="-12%" y="-12%" width="124%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0" result="desat" />
+      <feBlend in="SourceGraphic" in2="desat" mode="multiply" />
+    </filter>
+  </defs>
+  <path d="M120 492c-10-206 160-360 330-360s340 154 330 360c-10 206-140 340-330 360-190-20-320-154-330-360Z" fill="url(#curlsDepth)" filter="url(#curlTexture)" />
+  <path d="M206 544c0 154 88 246 244 246s244-92 244-246c0-74-18-144-54-204-34-58-104-118-190-116-86 2-156 62-190 120-36 58-54 128-54 200Z" fill="#2a1209" fill-opacity="0.35" />
+</svg>

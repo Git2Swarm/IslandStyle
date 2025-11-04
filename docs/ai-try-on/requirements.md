@@ -12,7 +12,7 @@ The sections below separate the requirements for each track.
 
 ## Demo capabilities
 - Upload or load a sample portrait directly in the browser.
-- Display wig favorites defined in `assets/js/try-on-data.js` with thumbnails, descriptions, and default alignment metadata.
+- Display wig favorites defined in `data/try-on/overlays.json` (compiled into `assets/js/try-on-data.js` via `node scripts/sync-try-on-demo.mjs`) with thumbnails, descriptions, and default alignment metadata.
 - Allow visitors to scale and offset the overlay manually for a believable fit.
 - Export the composite as a PNG without leaving the page.
 - Provide clear guidance, sample assets, and safeguards (size/type validation) for testing.

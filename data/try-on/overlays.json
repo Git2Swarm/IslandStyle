@@ -1,0 +1,35 @@
+[
+  {
+    "id": "sunset-waves",
+    "name": "Sunset Waves",
+    "color": "Warm Auburn Ombre",
+    "description": "Loose cascading waves with auburn-to-copper gradient highlights.",
+    "widthPercent": 78,
+    "defaultScale": 100,
+    "defaultOffsetX": 0,
+    "defaultOffsetY": -6,
+    "overlayFile": "sunset-waves.svg"
+  },
+  {
+    "id": "midnight-bob",
+    "name": "Midnight Bob",
+    "color": "Cool Espresso",
+    "description": "Polished chin-length bob with subtle shine and smooth layers.",
+    "widthPercent": 72,
+    "defaultScale": 95,
+    "defaultOffsetX": 0,
+    "defaultOffsetY": -2,
+    "overlayFile": "midnight-bob.svg"
+  },
+  {
+    "id": "island-curls",
+    "name": "Island Curls",
+    "color": "Soft Chestnut",
+    "description": "Voluminous corkscrew curls with sunkissed chestnut dimension.",
+    "widthPercent": 86,
+    "defaultScale": 110,
+    "defaultOffsetX": 0,
+    "defaultOffsetY": -10,
+    "overlayFile": "island-curls.svg"
+  }
+]

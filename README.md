@@ -24,6 +24,16 @@ The site is built with static HTML, CSS, and a small amount of JavaScript. Any s
 
 > If you prefer Node-based tooling, `npx serve` from the project root will provide an equivalent static server.
 
+### Syncing demo data
+
+The repo keeps the try-on demo data (sample portrait plus wig overlays) in `data/try-on/`. Whenever you update those SVG sources or add new overlays, regenerate the browser bundle with:
+
+```bash
+node scripts/sync-try-on-demo.mjs
+```
+
+The script compiles the SVG assets into `assets/js/try-on-data.js`. Run it before committing so the static page and source files stay aligned.
+
 ## Project structure
 
 ```

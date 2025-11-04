@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f6f0ea" />
+      <stop offset="100%" stop-color="#efe3d9" />
+    </linearGradient>
+    <linearGradient id="shirtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6f7fb6" />
+      <stop offset="100%" stop-color="#44527e" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bgGradient)" rx="60" />
+  <path d="M300 900c40-120 140-140 150-140h0c20 0 110 20 150 140l60 220H240Z" fill="url(#shirtGradient)" />
+  <path d="M285 452c-6-120 90-222 165-232s154 32 180 132c10 38 6 76-14 116-16 32-24 80-26 134-2 80-28 132-122 156-94-24-120-76-122-156-2-54-10-102-26-134-20-40-24-78-12-116Z" fill="#3e2b24" />
+  <circle cx="450" cy="456" r="176" fill="#f6c8a8" />
+  <ellipse cx="394" cy="440" rx="24" ry="28" fill="#2f221a" />
+  <ellipse cx="506" cy="440" rx="24" ry="28" fill="#2f221a" />
+  <path d="M366 520c26 20 58 28 84 28s58-8 84-28" fill="none" stroke="#2f221a" stroke-width="12" stroke-linecap="round" />
+  <path d="M342 608c18 32 58 54 108 54s90-22 108-54" fill="none" stroke="#2f221a" stroke-width="12" stroke-linecap="round" />
+</svg>
