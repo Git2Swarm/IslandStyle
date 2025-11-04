@@ -15,6 +15,16 @@ Always rebase on the latest `main` before opening either PR (`git fetch && git c
 
 ---
 
+## Current status snapshot
+
+- ✅ `main` today contains documentation, CSV tooling, and demo guidance only—no production AI try-on UI has shipped yet.
+- 🚧 The forthcoming docs + demo PR extracts sandbox assets without touching runtime bundles so it remains production-neutral.
+- 🔒 The gated UI PR will introduce the try-on surface behind a kill switch; do not merge it without verifying the flag defaults to "off" in production.
+
+Keep the README in sync with the actual rollout so reviewers can instantly confirm which assets are live.
+
+---
+
 ## 1. Website design & experience blueprint
 
 The marketing site is being built as a modular, content-driven experience that highlights what makes IslandStyle unique and moves visitors into the try-on flow quickly.
